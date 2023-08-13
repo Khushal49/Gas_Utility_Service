@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Request Tracking</h2>
+  <ul>
+    {% for request in service_requests %}
+      <li>
+        Request Type: {{ request.request_type }}
+        Status: {{ request.requeststatus_set.last.status }}
+        Submitted Date: {{ request.submitted_date }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
